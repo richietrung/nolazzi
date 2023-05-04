@@ -2,10 +2,14 @@
 
 1. client
 
-cd client
-npm install
+```console
+$ cd client
+$ npm install
+```
 
 2. server
 
-cd server
-npm install
+```console
+$ cd server
+$ npm install
+```
