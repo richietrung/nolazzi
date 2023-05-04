@@ -31,7 +31,6 @@ if (process.env.NODE_ENV === 'development') {
 app.use(
     cors({
         origin: process.env.REACT_URL,
-        allowedHeaders: ['Content-Type', 'Authorization'],
         credentials: true,
     })
 );
