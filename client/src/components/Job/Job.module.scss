@@ -1,0 +1,76 @@
+.job {
+    padding: 2rem 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #333;
+
+}
+
+
+.infoBox{
+    padding: 1.6rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check-circle{
+    width: 2rem;
+    height: 2rem;
+}
+
+.name{
+    display: block;
+    padding: 0.4rem 1rem;
+    height: 3.4rem;
+    min-width: 70rem;
+    width: 120rem;
+    font-size: 3rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f0f0da;
+}
+
+.btn {
+    margin: 0.5rem 0.8rem;
+    width: 6.2rem;
+    height: 3.6rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px #a3a1a1;
+    cursor: pointer;
+}
+
+
+.btn:active {
+    scale: 0.96;
+}
+
+.attributesBox{
+    padding: 0 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    text-transform: capitalize;
+    display: block;
+    line-height: 100%;
+    margin-right: 16px;
+    font-size: 3rem;
+}
+
+.name.item {
+    text-transform: none;
+}
+
+.flagged {
+    color: #EDF113;
+}
+
+.unfinished {
+    color: red;
+}

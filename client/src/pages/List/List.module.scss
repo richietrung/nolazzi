@@ -1,0 +1,26 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30rem;
+    margin-right: 2rem;
+    align-items: center;
+    color: black;
+}
+
+.title {
+    text-align: center;
+    font-size: 6rem;
+}
+
+.createBtn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 20rem;
+    height: 5rem;
+    font-size: 3rem;
+    background-color: #f5f5f5;
+    box-shadow: 4px 4px 4px #a3a1a1;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    cursor: pointer;
+}

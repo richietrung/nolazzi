@@ -1,0 +1,40 @@
+.label {
+    font-size: 3.2rem;
+    text-transform: capitalize;
+}
+
+.input-tag {
+    font-size: 2.2rem;
+    padding: 0.6rem;
+    border: 1px solid #95A5A6 ;
+    border-radius: 0.4rem;
+}
+
+.input-tag:focus {
+    outline: none;
+}
+
+.validation-text {
+    margin-top: 0.4rem;
+    margin-bottom: 2.4rem;
+    padding: 0;
+    font-size: 2.2rem;
+    line-height: 1.6rem;
+    color: transparent;
+    user-select: none;
+}
+
+.input-tag:invalid[focused="true"] {
+    outline: red solid 2px;
+    border: none;
+}
+
+.input-tag:valid[focused="true"] {
+    border: 2px solid #2ECC71;
+}
+
+.input-tag:invalid[focused="true"] + .validation-text {
+    color: red,
+}
+
+
