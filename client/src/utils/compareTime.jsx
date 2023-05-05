@@ -1,13 +1,19 @@
-const compareTime = (time = undefined, date = undefined) => {
-    // Get the current time and date
+const compareTime = ({ time, date }) => {
     const now = new Date();
     const currentTime = now.getHours() + ':' + now.getMinutes();
-    const currentDate = now.toISOString().substring(0, 10); // in YYYY-MM-DD format
-    // Compare the time and date with the current time and date
-    if (time && date && time < currentTime && date < currentDate) {
+    const currentDate = `${new Date().getFullYear()}-${String(
+        new Date().getMonth() + 1
+    ).padStart(2, '0')}-${String(new Date().getDate()).padStart(2, '0')}`;
+    console.log(currentTime, date, currentDate);
+    console.log(time < currentTime);
+    console.log(date <= currentDate);
+    if (time && date && time < currentTime && date <= currentDate) {
+        return 'unfinished';
+    } else if (time && !date && time < currentTime) {
+        return 'unfinished';
+    } else if (date && !time && date < currentDate) {
         return 'unfinished';
     }
-    if (time && time < currentTime) return 'unfinished';
     return 'finishing';
 };
 

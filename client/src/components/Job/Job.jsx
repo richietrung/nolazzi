@@ -20,8 +20,13 @@ const Job = memo(function Job({
     check = true,
 }) {
     const [unfinished, setUnfinished] = useState(
-        compareTime(data.remindTime, data.remindDate)
+        compareTime({
+            time: data.remindTime || null,
+            date: data.remindDate.split('T')[0] || null,
+        })
     );
+    console.log(data.remindTime, data.remindDate.split('T')[0]);
+    console.log(unfinished);
     const [editing, setEditing] = useState(false);
     const [jobData, setJobData] = useState(() => {
         // eslint-disable-next-line no-unused-vars
@@ -216,7 +221,12 @@ const Job = memo(function Job({
                                 }
                             />
                         )}
-                        <span type="text" className={cx('name', 'item')}>
+                        <span
+                            type="text"
+                            className={cx('name', 'item', {
+                                unfinished: unfinished === 'unfinished',
+                            })}
+                        >
                             {jobData.name}
                         </span>
                         <div className={cx('btnBox')}>
@@ -237,48 +247,28 @@ const Job = memo(function Job({
                         </div>
                     </div>
                     <div className={cx('attributesBox')}>
-                        <span
-                            type="date"
-                            className={cx('date', 'item', {
-                                unfinished: unfinished === 'unfinished',
-                            })}
-                        >
+                        <span type="date" className={cx('date', 'item')}>
                             Date:{' '}
                             {jobData.remindDate
                                 ? jobData.remindDate.slice(0, 10)
                                 : 'None'}
                         </span>
-                        <span
-                            type="time"
-                            className={cx('time', 'item', {
-                                unfinished: unfinished === 'unfinished',
-                            })}
-                        >
+                        <span type="time" className={cx('time', 'item')}>
                             Time:{' '}
                             {jobData.remindTime ? jobData.remindTime : 'None'}
                         </span>
                         <span
-                            className={cx('item', {
-                                unfinished: unfinished === 'unfinished',
-                            })}
+                            className={cx('item')}
                             style={{
                                 color: `${setPriorityColor(jobData.priority)}`,
                             }}
                         >
                             Priority: {jobData.priority}
                         </span>
-                        <span
-                            className={cx('item', {
-                                unfinished: unfinished === 'unfinished',
-                            })}
-                        >
+                        <span className={cx('item')}>
                             Repeat: {jobData.repeat}
                         </span>
-                        <span
-                            className={cx('item', {
-                                unfinished: unfinished === 'unfinished',
-                            })}
-                        >
+                        <span className={cx('item')}>
                             List: {data.list ? data.list.name : 'none'}
                         </span>
                         {jobData.flag ? (
