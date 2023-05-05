@@ -42,7 +42,7 @@ function Header({ user }) {
                         <img
                             className={cx('avatar')}
                             src={`${import.meta.env.VITE_API_BASE_URL}${
-                                user.photo
+                                user.photo || '/default.png'
                             }`}
                             alt="avatar"
                         />

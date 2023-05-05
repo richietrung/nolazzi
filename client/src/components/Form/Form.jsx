@@ -47,8 +47,8 @@ function Form({
                         }, {});
                         return newData;
                     });
+                    window.location.reload(true);
                 }
-                window.location.reload(true);
             }}
             className={cx('form-group')}
         >

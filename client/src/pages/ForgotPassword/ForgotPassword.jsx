@@ -11,7 +11,7 @@ axios.defaults.withCredentials = true;
 function ForgotPassword({ user }) {
     const notify = (status) => {
         if (status === 'success')
-            return toast.success('Sending mail successfully!', {
+            return toast.success('Email was sent!', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
